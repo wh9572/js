@@ -1,0 +1,44 @@
+offsetTop   返回元素相对带有定位元素上方的偏移，没有定位，以body为准
+offsetLeft   返回元素相对带有定位元素左边的偏移，没有定位，以body为准
+offsetWidth   返回自身包括padding + border + width 没有单位
+offsetHeight   返回自身包括padding + border + height 没有单位
+offsetParent    返回带有定位的父亲，否则返回body  parentNode 不需要父亲有定位
+想要获取元素大小位置，用offset(数值型)  想要更改元素的值，用style(字符串)
+
+
+clientTop    返回元素上边框的大小
+clientLeft    返回元素左边框的大小
+clientWidth     返回自身包括padding  + width 没有单位   (不算边框)
+clientHeight    返回自身包括padding  + height 没有单位  (不算边框)
+
+scrollTop     返回被卷去的上侧距离，返回数值不带单位
+scrollLeft    返回被卷去的左距离，返回数值不带单位
+scrollWidth   返回自身实际的宽度，返回数值不带单位  (不算边框)
+scrollHeight  返回自身实际的高度，返回数值不带单位  (不算边框)
+
+页面被卷去的头部(window.pageYOffset)
+页面被卷去的左侧(window.pageXOffset)
+
+
+总结
+offset系列用于获得元素位置(有边框)    offsetLeft    offsetTop 
+client用于获得元素大小    (不算边框)  clientWidth   clientHeight
+scroll用于获取滚动距离    (不算边框)  scrollTop     scrollLeft
+window.scroll(x,y)    滚动到页面具体的位置(不加单位)
+页面的滚动距离通过(window.pageYOffset或者window.pageXOffset
+
+
+
+立即执行函数
+(function(1,2) {})(a,b)
+(function(1,2) {}(a,b))
+动画函数封装 126集
+
+mousemove   鼠标移动
+mouseover   鼠标经过自身盒子触发，经过子盒子也会触发
+mouseenter  鼠标经过  只经过自身盒子会触发(不会冒泡)
+mouseleave  鼠标离开  (不会冒泡)
+
+'xxx'.click()   手动调用点击事件
+flag    节流阀(类似水龙头)
+

@@ -1,0 +1,16 @@
+BOM
+DOMContentLoaded(只加载内容)
+load(页面全部加载完毕，包含图片、css等等)
+resize
+
+setTimeout(调用函数，延迟时间)单位是毫秒    调用一次
+setInterval(调用函数，延迟时间)单位是毫秒   反复调用
+window.clearTimeout(timeID) timeID 是定时器的名字
+window.clearInterval(timeID) timeID 是定时器的名字
+
+主线程在同步任务执行完成之后，回去异步队列里面看有没有任务，如果有就放入主线程执行，反反复复，成为事件循环(eventloop)
+
+location(href/search)重点
+location.reload() 相当于f5 参数为true 相当于ctrl+f5
+navigate.userAgent获取主机浏览器访问信息
+history(forword/back/go)

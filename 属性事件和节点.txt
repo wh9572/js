@@ -1,0 +1,95 @@
+自定义属性(获取/设置/删除)
+getAttribute('xxx')
+setAttribute('data-xxx','属性值')
+removeAttribute('xxx')
+
+节点(元素/属性/文本)
+元素 nodeType  1
+属性 nodeType  2
+文本 nodeType  3(文字/空格/换行)
+
+父节点 
+parentNode(重点)  得到的是最近的父级节点  找不到父节点返回 null
+
+子节点
+ul.childNodes  返回的是集合(包括文本节点)
+ul.children(重点)    返回所有孩子(不包括文本节点)
+ul.firstChild  返回第一个子节点，不管是文本还是元素
+ul.lastChild   返回第一个子节点，不管是文本还是元素
+ul.firstElementChild  返回第一个子元素节点
+ul.firstEmelentChild  返回第一个子元素节点
+实际开发的写法(重点)
+ul.children[0] 返回第一个
+ul.children[ul.children.length - 1] 返回最后一个
+
+兄弟节点
+div.nextSibling   下一个兄弟节点 包括元素和文本节点
+div.previousSibling   上一个兄弟节点 包括元素和文本节点
+div.nextElementSibling    下一个兄弟元素节点
+div.previousElementSibling    上一个兄弟元素节点 
+
+创建节点
+document.creatElement('li')   动态创建元素
+
+添加节点  父级.appendChild(子级)  后面追加元素
+ul.appendChild('li')
+ul.insertBefore('li',指定元素位置)    前面添加元素
+
+删除节点
+ul.removeChild('li')
+
+复制节点
+node.cloneNode()    克隆节点 浅拷贝 复制标签不复制内容
+node.cloneNode(true)    克隆节点 深拷贝 复制标签复制内容
+
+三种创建元素方式区别
+document.write()    如果页面文档流加载完毕，在调用会导致页面重绘
+innerHtml   创建多个元素效率高，采取数组形式，结构稍微复杂    大概8s
+document.creatElement()   创建多个元素效率稍微低一点，但是结构清晰 大概20s
+
+
+事件(注册事件/删除事件)
+onclick   唯一性，后注册的处理函数会覆盖前面的处理函数
+addEventListener() 可以同时注册多个监听器
+
+div.onclick = null (传统方式解绑事件)
+div.addEventListener('click,fn) (目前解绑事件)
+div.removeEventListener('click,fn)    function fn(){alert(22)}
+div.addEventListener('click,function(){},false)   事件冒泡  true  事件捕获
+
+事件(event)
+e.target    返回的是当前触发事件的对象
+e.type      返回的是事件类型
+e.preventDefault()    阻止默认事件
+e.returnValue(ie)
+e.retuen false(仅限于传统的注册方式)        没有兼容性问题 return 后面的代码不执行
+e.stopPropagation()   阻止事件冒泡
+e.cancelBubble(ie)
+
+事件委托的原理就是事件冒泡，给父节点添加监听器，利用事件冒泡影响每一个子节点
+ul.addEventListener('click,function(e){e.target.style.backgroundColor = 'pink'}) 点击谁谁换颜色
+
+禁止鼠标右键菜单(contextmenu)
+禁止鼠标选中(selectstart)
+
+client    返回的是当前可视区的坐标(不包含滚动条滚动上去的区域)
+page      返回的是页面文档的坐标(包含滚动条滚动上去的区域)
+screen    返回的是距离电脑屏幕的坐标
+
+常用键盘事件(onkeyup/onkeydown/onkeypress)    onkeypress 不包含功能键(ctrl/shift/左右箭头)
+先执行onkeydown/onkeypress/onkeyup
+onkeyup/onkeydown 事件不区分大小写  a 和 A 都是65
+onkeypress事件区分大小写  a 和 A 不一样
+可以使用e.keyCode返回的ASCII码值判断用户按下了那个键
+
+
+
+
+
+
+
+
+
+
+
+

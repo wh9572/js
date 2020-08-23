@@ -1,0 +1,22 @@
+touchstart    手指DOM触摸到元素触发
+touchsmove    手指在DOM元素上滑动触发(有需要可以加上e.preventDefault()，阻止默认的滚动行为)
+touchstend    手指离开DOM元素触发
+
+touchEvent
+touches   正在触摸屏幕的所有手指的列表(如果监听的是一个DOM元素，他们两个是一样的，手指离开不存在)
+targetTouches(重点)   正在触摸当前DOM元素的手指列表(如果监听的是一个DOM元素，他们两个是一样的，手指离开不存在)
+changedTouches  手指状态发生了改变的列表  从有到无 或者 从无到有(手指离开存在)
+
+transitionend   监听过渡结束
+
+classList(add/remove/toogle)       返回元素的类名，数组，不加点
+
+fastclick.js  (解决移动端300s延迟问题)
+
+本地存储(sessionStorage/localStorage)
+
+sessionStorage(setItem/getItem/removeItem/clear())  关闭页面失效
+sessionStorage.setItem('存储的名字',value)
+
+localStorage(setItem/getItem/removeItem/clear())    关闭页面不失效/多页面可以共享使用(同一浏览器可以共享)
+localStorage.setItem('存储的名字',value)
